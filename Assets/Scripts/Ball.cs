@@ -29,13 +29,12 @@ public class Ball : MonoBehaviour
         transform.position = startPosition;
         rigidBody2D.velocity = Vector2.zero;
 
-        // Inicia la corrutina que espera 2 segundos antes de aplicar la fuerza
         StartCoroutine(DelayedStart());
     }
 
     IEnumerator DelayedStart()
     {
-        yield return new WaitForSeconds(2); // Espera 2 segundos
+        yield return new WaitForSeconds(2); 
 
         velocity.x = Random.Range(-1, 1);
         velocity.y = 1;
