@@ -5,12 +5,13 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     public Rigidbody2D rigidBody2D;
-    public float speed = 300;
+    public float speed = 150;
     private Vector2 velocity;
 
     Vector2 startPosition;
     void Start()
     {
+        GameManager.instance.ball = this;
         startPosition = transform.position;
 
         ResetBall();
@@ -20,7 +21,12 @@ public class Ball : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("DeadZone"))
         {
-            FindObjectOfType<GameManager>().LoseLive();
+            GameManager.instance.LoseLive();
+        }
+        if (rigidBody2D.velocity.magnitude <= 12)
+        {
+            rigidBody2D.velocity *= 1.0125f;
+            Debug.Log(speed);
         }
     }
 
