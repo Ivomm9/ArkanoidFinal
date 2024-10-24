@@ -23,7 +23,6 @@ public class Brick : MonoBehaviour
             if (brickHealth <= 0)
             {
                 GameManager.instance.bricks--;
-                Debug.Log(GameManager.instance.bricks);
                 Destroy(gameObject);
                 GameManager.instance.CheckLevelCompleted();
             }
@@ -40,12 +39,15 @@ public class Brick : MonoBehaviour
         switch (brickHealth)
         {
             case 1:
+                GameManager.instance.AddPoints(this);
                 spriteRenderer.sprite = healthSprites[0]; 
                 break;
             case 2:
+                GameManager.instance.AddPoints(this);
                 spriteRenderer.sprite = healthSprites[1]; 
                 break;
             case 3:
+                GameManager.instance.AddPoints(this);
                 spriteRenderer.sprite = healthSprites[2]; 
                 break;
         }
