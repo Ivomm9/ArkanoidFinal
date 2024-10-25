@@ -5,7 +5,7 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     public Rigidbody2D rigidBody2D;
-    public float speed = 150;
+    public float speed = 75;
     private Vector2 velocity;
 
     Vector2 startPosition;
@@ -23,10 +23,10 @@ public class Ball : MonoBehaviour
         {
             GameManager.instance.LoseLive();
         }
-        if (rigidBody2D.velocity.magnitude <= 12)
+        if (rigidBody2D.velocity.magnitude <= 11)
         {
-            rigidBody2D.velocity *= 1.0125f;
-            Debug.Log(speed);
+            rigidBody2D.velocity *= 1.01f;
+ 
         }
     }
 

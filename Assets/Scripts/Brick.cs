@@ -18,10 +18,12 @@ public class Brick : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ball"))
         {
+            GameManager.instance.AddPoints(this);
             brickHealth--;
 
             if (brickHealth <= 0)
             {
+                GameManager.instance.AddPoints(this);
                 GameManager.instance.bricks--;
                 Destroy(gameObject);
                 GameManager.instance.CheckLevelCompleted();
@@ -30,6 +32,7 @@ public class Brick : MonoBehaviour
             {
                 UpdateBrickSprite();
             }
+
         }
     }
 
@@ -39,15 +42,12 @@ public class Brick : MonoBehaviour
         switch (brickHealth)
         {
             case 1:
-                GameManager.instance.AddPoints(this);
                 spriteRenderer.sprite = healthSprites[0]; 
                 break;
             case 2:
-                GameManager.instance.AddPoints(this);
                 spriteRenderer.sprite = healthSprites[1]; 
                 break;
             case 3:
-                GameManager.instance.AddPoints(this);
                 spriteRenderer.sprite = healthSprites[2]; 
                 break;
         }

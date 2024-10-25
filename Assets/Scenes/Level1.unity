@@ -2283,6 +2283,7 @@ GameObject:
   - component: {fileID: 652852080}
   - component: {fileID: 652852079}
   - component: {fileID: 652852083}
+  - component: {fileID: 652852084}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2397,6 +2398,20 @@ MonoBehaviour:
   scoreText: {fileID: 305239752}
   highscoreText: {fileID: 864067066}
   isAutoPlayEnabled: 0
+--- !u!114 &652852084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652852078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd5f3cc6ffa5dfc4bbf45c97e628ca52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 305239752}
+  highscoreText: {fileID: 864067066}
 --- !u!4 &654111857 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2560006771115438135, guid: 4e5ad16e293c95c4a8a467818727594c, type: 3}
