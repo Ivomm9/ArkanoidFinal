@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SaveAndLoad : MonoBehaviour
+public class SaveAndLoad
 {
+
     
-    public void Save() {
+    public void Save(string sceneName) {
 
         PlayerPrefs.SetInt("score", GameManager.instance.score);
         PlayerPrefs.SetInt("lives", GameManager.instance.lives);
-        PlayerPrefs.SetInt("scene", SceneManager.GetActiveScene().buildIndex);
+        PlayerPrefs.SetString("scene", sceneName);
         PlayerPrefs.Save();
     }
 

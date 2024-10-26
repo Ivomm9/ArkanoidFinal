@@ -22,6 +22,11 @@ public class Ball : MonoBehaviour
         if (collision.gameObject.CompareTag("DeadZone"))
         {
             GameManager.instance.LoseLive();
+            SoundManager.instance.PlaySound(SoundManager.instance.loseLife);
+        }
+        else
+        {
+            SoundManager.instance.PlaySound(SoundManager.instance.bounce);
         }
         if (rigidBody2D.velocity.magnitude <= 11)
         {

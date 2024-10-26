@@ -24,9 +24,15 @@ public class Brick : MonoBehaviour
             if (brickHealth <= 0)
             {
                 GameManager.instance.AddPoints(this);
+
                 GameManager.instance.bricks--;
                 Destroy(gameObject);
                 GameManager.instance.CheckLevelCompleted();
+            }
+            else if (brickHealth == 2)
+            {
+                StartCoroutine(DuplicateBallScale(collision.gameObject));
+                UpdateBrickSprite();
             }
             else
             {
@@ -51,5 +57,15 @@ public class Brick : MonoBehaviour
                 spriteRenderer.sprite = healthSprites[2]; 
                 break;
         }
+    }
+
+    private IEnumerator DuplicateBallScale(GameObject ball)
+    {
+        Vector3 originalScale = ball.transform.localScale;
+        ball.transform.localScale = originalScale * 2; 
+
+        yield return new WaitForSeconds(8); 
+
+        ball.transform.localScale = originalScale; 
     }
 }

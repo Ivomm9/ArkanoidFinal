@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     public TMP_Text highscoreText;
     public TMP_Text livesText;
 
+    public SaveAndLoad saveLoad;
+
     public int score = 0;
     public int highscore = 0;
 
@@ -27,6 +29,7 @@ public class GameManager : MonoBehaviour
 
     public void Awake()
     {
+        saveLoad = new SaveAndLoad();
         if (instance == null)
         {
             instance = this;
@@ -67,9 +70,15 @@ public class GameManager : MonoBehaviour
 
     public void CheckLevelCompleted()
     {
-        if (bricks <= 0)
+        if (bricks <= 0 && SceneManager.GetActiveScene().name == "Level1")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            saveLoad.Save("Level2");
+            SceneManager.LoadScene("Level2");
+        }
+        else if (bricks <= 0 && SceneManager.GetActiveScene().name == "Level2")
+        {
+            saveLoad.Save("Level1");
+            SceneManager.LoadScene("Level1");
         }
     }
 
@@ -83,5 +92,12 @@ public class GameManager : MonoBehaviour
     {
         score += 10;
         scoreText.text = score.ToString();
+
+        if (highscore <= score)
+        {
+            highscore = score;
+            highscoreText.text = highscore.ToString();
+        }
+
     }
 }
