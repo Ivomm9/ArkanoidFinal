@@ -19,8 +19,8 @@ public class GameManager : MonoBehaviour
     public TMP_Text highscoreText;
     public TMP_Text livesText;
 
-    int score = 0;
-    int highscore = 0;
+    public int score = 0;
+    public int highscore = 0;
 
     // Variable para controlar si el AutoPlay está activado o no
     public bool isAutoPlayEnabled = false;

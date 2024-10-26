@@ -28,6 +28,11 @@ public class Ball : MonoBehaviour
             rigidBody2D.velocity *= 1.01f;
  
         }
+
+        float hitPoint = (transform.position.x - collision.transform.position.x);
+        Vector2 direction = new Vector2(hitPoint, 1).normalized;
+
+
     }
 
     public void ResetBall()
@@ -42,7 +47,7 @@ public class Ball : MonoBehaviour
     {
         yield return new WaitForSeconds(2); 
 
-        velocity.x = Random.Range(-1, 1);
+        velocity.x = Random.Range(-1.0f, 1.0f);
         velocity.y = 1;
         rigidBody2D.AddForce(velocity * speed);
     }

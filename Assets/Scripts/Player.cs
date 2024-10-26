@@ -7,8 +7,10 @@ public class Player : MonoBehaviour
 {
     public Rigidbody2D rigidBody2D;
     public Slider slider;
-    public float minX = -1.875f;
-    public float maxX = 1.875f;
+    public GameObject RightLerp;
+    public GameObject LeftLerp;
+    public float minX;
+    public float maxX;
 
     // Referencia a la bola
     public GameObject ball;
@@ -17,6 +19,8 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        minX = LeftLerp.transform.position.x;
+        maxX = RightLerp.transform.position.x;
         GameManager.instance.player = this;
         startPosition = transform.position;
     }
