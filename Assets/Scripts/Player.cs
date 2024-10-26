@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1;
         minX = LeftLerp.transform.position.x;
         maxX = RightLerp.transform.position.x;
         GameManager.instance.player = this;

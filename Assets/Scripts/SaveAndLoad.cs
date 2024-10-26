@@ -19,7 +19,7 @@ public class SaveAndLoad
     {
         GameManager.instance.score = PlayerPrefs.GetInt("score");
         GameManager.instance.lives = PlayerPrefs.GetInt("lives");
-        SceneManager.LoadScene(PlayerPrefs.GetInt("scene"));
+        SceneManager.LoadScene(PlayerPrefs.GetString("scene"));
     }
 
 }

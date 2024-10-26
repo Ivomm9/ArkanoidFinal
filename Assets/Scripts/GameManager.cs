@@ -43,8 +43,8 @@ public class GameManager : MonoBehaviour
 
     public void Start()
     {
-        scoreText.text = score.ToString();
-        highscoreText.text = "Best: " + highscore.ToString();
+       // scoreText.text = score.ToString();
+      //  highscoreText.text = "Best: " + highscore.ToString();
     }
 
     public void LoseLive()
@@ -97,6 +97,7 @@ public class GameManager : MonoBehaviour
         {
             highscore = score;
             highscoreText.text = highscore.ToString();
+            PlayerPrefs.SetInt("highscore", highscore);
         }
 
     }

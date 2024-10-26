@@ -179,7 +179,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Restart
+  m_text: 'Main menu
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 79878aa68c8206948a0d7a19c5abe1c6, type: 2}
   m_sharedMaterial: {fileID: 8400322479424777226, guid: 79878aa68c8206948a0d7a19c5abe1c6, type: 2}
@@ -659,8 +661,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 579126762}
-        m_TargetAssemblyTypeName: GameOverScene, Assembly-CSharp
-        m_MethodName: RestartGame
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: LostGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

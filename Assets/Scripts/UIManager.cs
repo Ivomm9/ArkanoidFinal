@@ -14,6 +14,9 @@ public class UIManager : MonoBehaviour
         GameManager.instance.scoreText = scoreText;
         GameManager.instance.highscoreText = highscoreText;
         GameManager.instance.livesText = livesText;
+        scoreText.text = GameManager.instance.score.ToString();
+        highscoreText.text = GameManager.instance.highscore.ToString();
+        livesText.text = GameManager.instance.lives.ToString();
     }
 
     // Update is called once per frame
